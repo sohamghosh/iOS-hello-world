@@ -9,12 +9,12 @@
 - (void)viewDidLoad // After loadView. Typically, lables/buttons go here.
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor grayColor];
     
     // Red Button
     self.redButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.redButton.frame = CGRectMake(100, 100, 100, 44);
-    [self.redButton setTitle:@"Paint red!" forState:UIControlStateNormal];
+    [self.redButton setTitle:@"Paint Red!" forState:UIControlStateNormal];
     
     [self.redButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.redButton];
@@ -22,7 +22,7 @@
     // Green Button
     self.greenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.greenButton.frame = CGRectMake(100, 300, 100, 44);
-    [self.greenButton setTitle:@"Make 100%" forState:UIControlStateNormal];
+    [self.greenButton setTitle:@"Paint Green!" forState:UIControlStateNormal];
     
     [self.greenButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];    
     [self.view addSubview:self.greenButton];
@@ -36,11 +36,7 @@
 }
 
 - (void) buttonPressed:(UIButton *) sender
-{
-    NSLog(@"Button pressed. Sender: %@", sender);
-    //self.view.alpha = ((double) arc4random() / 0x100000000);
-    //sender.superview.backgroundColor = [UIColor blueColor];
-    
+{    
     if ([sender isEqual:self.redButton]) {
         self.view.backgroundColor = [UIColor redColor];
     } else {
